@@ -14,7 +14,8 @@ public class AccountAsynQueue implements Queueable{
             act.Private__c = false;
         }
         
-        update accountList;
+        //update accountList;
+        Databse.update(accountList, false);
         
         if(accountList.size()>0){
             AccountAsynQueue queueInstance = new AccountAsynQueue();        
