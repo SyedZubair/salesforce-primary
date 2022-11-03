@@ -14,13 +14,10 @@ public class AccountAsynQueue implements Queueable{
             act.Private__c = false;
         }
         
-<<<<<<< HEAD
-        update accountList;
+        //update accountList;
         // to create conflict in repo
-=======
         //update accountList;
         Databse.update(accountList, false);
->>>>>>> fa831b831ba15084a20a87b8eb490fa933d1a594
         
         if(accountList.size()>0){
             AccountAsynQueue queueInstance = new AccountAsynQueue();        
