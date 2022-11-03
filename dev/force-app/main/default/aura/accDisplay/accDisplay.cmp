@@ -7,7 +7,7 @@
     targetRecord="{!v.accountRecord}"
     targetFields="{!v.simpleNewAccount}"
     targetError="{!v.newContactError}"
-                  mode="VIEW"
+                  mode="FULL"
     />
    
     <!-- Display a lightning card with details about the record -->
