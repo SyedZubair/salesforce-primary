@@ -1,0 +1,51 @@
+<apex:page standardController="Account" contentType="application/vnd.ms-excel">
+    
+    <!-- Show all the related Contacts -->
+
+    <apex:pageBlock title="Associated Contacts">
+       
+        <apex:pageBlockTable value="{!account.Contacts}" var="item">
+
+            <apex:column value="{!item.Name}"/>
+            <apex:column value="{!item.Phone}"/>
+            <apex:column value="{!item.Email}"/>
+            <apex:column value="{!item.MailingCity}"/>
+            <apex:column value="{!item.MailingCountry}"/>
+
+        </apex:pageBlockTable>
+
+    </apex:pageBlock>
+    
+    
+    <apex:pageBlock title="Associated Opportunities">
+       
+        <apex:pageBlockTable value="{!account.Opportunities}" var="item">
+
+            <apex:column value="{!item.Name}"/>
+            <apex:column value="{!item.StageName}"/>
+            <apex:column value="{!item.ExpectedRevenue}"/>
+            <apex:column value="{!item.CloseDate}"/>
+            <apex:column value="{!item.Probability}"/>
+
+        </apex:pageBlockTable>
+
+    </apex:pageBlock>
+    
+    <!-- Repeat --
+     <apex:pageBlock title="Associated Opportunities using repeat">
+       
+         <apex:repeat value="{!account.Opportunities}" var="item">
+             {!item.Name} <br/>
+             {!item.StageName} <br/>
+             {!item.ExpectedRevenue} <br/>
+             {!item.CloseDate} <br/>
+             {!item.Probability} <br/>
+         </apex:repeat>
+        
+
+    </apex:pageBlock> -->
+    
+    
+    
+
+</apex:page>
