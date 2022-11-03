@@ -1,0 +1,130 @@
+<aura:component 
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" 
+                controller="GenericController">
+    
+    
+    <!-- handlers-->
+    <aura:handler name="init" value="{! this }" action="{! c.doInit }"/>    
+    
+    <!--  Component Level Attributes -->
+    <aura:attribute name="isModalVisible" type="Boolean" default="false"/>
+        
+    <!-- data table attributes open leads-->
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+    
+     <!-- data table attributes open cases-->
+    <aura:attribute name="cases" type="Object"/>
+    <aura:attribute name="casesColumns" type="List"/>
+    
+     <!-- data table attributes opportunities -->
+    <aura:attribute name="opps" type="Object"/>
+    <aura:attribute name="oppsColumns" type="List"/>
+    
+    <aura:attribute name="SelectedCase" type="List"/>
+    
+        
+    <lightning:card footer="Card Footer" title="Hello">
+        <aura:set attribute="actions">
+            <lightning:button label="New"/>
+        </aura:set>
+        <p class="slds-p-horizontal_small">
+            <lightning:accordion aura:id="accordion" activeSectionName="B">
+                <!-- Leads -->
+                <lightning:accordionSection name="A" label="Open Important Leads">
+                    <aura:set attribute="actions">
+                        <lightning:buttonMenu aura:id="menu" alternativeText="Show menu" iconSize="x-small" menuAlignment="right">
+                            <lightning:menuItem value="New" label="Menu Item One" />
+                            <lightning:menuItem value="Edit" label="Menu Item Two" />
+                        </lightning:buttonMenu>
+                    </aura:set>
+                    <aura:set attribute="body">
+                        
+                            <lightning:datatable
+                                                 keyField="id"
+                                                 data="{! v.data }"
+                                                 columns="{! v.columns }"
+                                                 hideCheckboxColumn="true"/>
+                        
+                        <p>.</p>
+                        <p>.</p>
+                        <p>.</p>
+                        <p>The section height expands to fit your content.</p>
+                    </aura:set>
+                </lightning:accordionSection>
+                <!-- Cases -->
+                <lightning:accordionSection name="B" label="Open Cases">
+                    <p>Here are the open cases which needs your input</p>
+                    <lightning:datatable
+                                         keyField="id"
+                                         data="{! v.cases }"
+                                         columns="{! v.casesColumns }"
+                                         onrowaction="{! c.handleRowAction }"/>
+                    <p>.</p>
+                    <p>
+                        <lightning:button variant="brand-outline" label="Show the content" title="Show the content" onclick="{! c.handleClick }" />
+                    </p>
+                    <p>The section height expands to fit your content.</p>
+                </lightning:accordionSection>
+                <lightning:accordionSection name="C" label="Important Opportunities">
+                    <lightning:datatable
+                                         keyField="id"
+                                         data="{! v.opps }"
+                                         columns="{! v.oppsColumns }"/>
+                    <p>.</p>
+                    <p>The section height expands to fit your content.</p>
+                </lightning:accordionSection>
+            </lightning:accordion>
+        </p>
+    </lightning:card>
+    
+    
+    
+    <lightning:button onclick="{! c.handleShowActiveSectionName }" label="Show Active Section Name"/>
+    <lightning:button onclick="{! c.handleSetActiveSectionC }" label="Open Section C"/>
+    
+    
+    
+    
+    
+    <!-- UI MARKUP -->
+    
+    <aura:if isTrue="{!v.isModalVisible}">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse">
+                <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                </svg>
+                <span class="slds-assistive-text">Cancel and close</span>
+            </button -->
+                <div class="slds-modal__header">
+                    <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">All New Cases</h1>
+                </div>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <p>Detailed view of new cases</p>
+                    <lightning:datatable
+                                         keyField="id"
+                                         data="{! v.SelectedCase }"
+                                         columns="{! v.casesColumns }"/>
+                    
+                    
+                </div>
+                <div class="slds-modal__footer">
+                    <lightning:button variant="brand-outline" label="Cancel" title="Cancel" onclick="{! c.handleCancel }" />
+                    <button class="slds-button slds-button_brand">Save</button>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+        
+    </aura:if> 
+    
+    <!-- UI Markup Ends -->
+
+
+
+    
+    
+</aura:component>
