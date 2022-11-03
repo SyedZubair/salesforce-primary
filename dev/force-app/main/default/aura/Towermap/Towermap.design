@@ -1,0 +1,5 @@
+<design:component>
+    <design:attribute name="markersTitle" label="Map Title" description="Enter Map Title" />
+    
+    
+</design:component>

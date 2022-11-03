@@ -1,0 +1,5 @@
+<apex:component >
+    <footer>
+        <p>Contact Us 888888888</p>
+    </footer>
+</apex:component>

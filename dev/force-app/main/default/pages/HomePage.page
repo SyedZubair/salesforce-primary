@@ -1,0 +1,330 @@
+<apex:page showHeader="false" sidebar="false" docType="html-5.0" standardStylesheets="false" standardController="Contact" extensions="ContactExtension" applyBodyTag="false" applyHtmlTag="false">
+    <link REL="icon" href="https://cdn-icons-png.flaticon.com/512/5968/5968151.png" type="img/x-icon"/>
+    
+    
+    
+    
+    <html lang="en">
+        <head>
+            <meta charset="utf-8"/>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+            <meta name="description" content="Visa Go Green"/>
+            <meta name="author" content="Syed Zubair"/>
+            <title>Visa Go Green</title>
+            
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" ></script>
+            <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/pricing/"/>
+            
+            
+            
+            
+            
+            <link href="/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous"/>
+            
+            <!-- Favicons -->
+            <link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180"/>
+            <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png"/>
+            <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png"/>
+            <link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json"/>
+            <link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#198754"/>
+            <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico"/>
+            <meta name="theme-color" content="#198754"/>
+            
+            
+            <style>
+                .bd-placeholder-img {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+                }
+                
+                @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+                }
+                }
+                
+                .b-example-divider {
+                height: 3rem;
+                background-color: rgba(0, 0, 0, .1);
+                border: solid rgba(0, 0, 0, .15);
+                border-width: 1px 0;
+                box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+                }
+                
+                .b-example-vr {
+                flex-shrink: 0;
+                width: 1.5rem;
+                height: 100vh;
+                }
+                
+                .bi {
+                vertical-align: -.125em;
+                fill: currentColor;
+                }
+                
+                .nav-scroller {
+                position: relative;
+                z-index: 2;
+                height: 2.75rem;
+                overflow-y: hidden;
+                }
+                
+                .nav-scroller .nav {
+                display: flex;
+                flex-wrap: nowrap;
+                padding-bottom: 1rem;
+                margin-top: -1px;
+                overflow-x: auto;
+                text-align: center;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+                }
+                
+                .whte{
+                color: white;
+                }
+            </style>
+        </head>
+        <body class="bg-success bg-opacity-95">
+            
+            
+            
+            <div class="container py-3 ">
+                <header>
+                    <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+                        
+                        <img  src="https://cdn-icons-png.flaticon.com/512/5968/5968151.png" style=" height:5rem;"  class="me-2" alt="Visa Go Green"/>
+                        <span class="fs-4 whte">Go Green</span>
+                        
+                    </div>
+                    
+                    
+                    
+                    
+                </header>
+                
+                <main>
+                    
+                    
+                    <apex:form id="mnContent">
+                        <apex:outputPanel rendered="{!mainContentDisplay}">
+                            <!-- CEO's message -->
+                            <figure class="text-center">
+                                <blockquote class="blockquote whte">
+                                    <p>Visa is committed to creating a more sustainable future. Our new net-zero commitment and enhanced efforts across our network in support 
+                                        of sustainable initiatives are immediate ways we will achieve our goals to help build a better future for our planet.
+                                    </p>
+                                </blockquote>
+                                <figcaption class="blockquote-footer whte">
+                                    Al Kelly, Chairman and Chief Executive Officer
+                                </figcaption>
+                            </figure>
+                            <!-- Ends  -->
+                            
+                            <!-- Landing Page Content -->
+                            
+                            <div class="row row-cols-1 row-cols-md-2 mb-3 text-center ">
+                                <div class="col ">
+                                    <div class="card mb-4 rounded-4 shadow-sm border border-dark ">
+                                        <div class="card-header py-3  p-3">
+                                            <h4 class="my-0 fw-normal ">Carbon Point</h4>
+                                        </div>
+                                        
+                                        <div class="card-body">
+                                            <p>
+                                                A Carbon credit represents the right to emit one metric ton of carbon dioxide
+                                            </p>
+                                            <img class="card-img-top" src="{!$Resource.CarbonCredit}"/>
+                                            
+                                            <h4 class="card-title pricing-card-title"><mark>1 Carbon Point = $16
+                                                <small class="text-muted fw-light"> / Ton of CO2</small></mark>
+                                            </h4>
+                                            <ul class="list-unstyled mt-3 mb-4 alert alert-primary" role="alert">
+                                                <li ><b>6</b> Trees offset 1 ton of CO2</li>
+                                                <li>Forecasted <b>10X</b> in next decade</li>
+                                                <li>Carbon Point = Monetary Benefits + Social Awareness &amp; Responsibility</li>
+                                                <li></li>
+                                            </ul>
+                                            <span class="badge rounded-pill text-bg-dark">CO<sub>2</sub></span>
+                                            <span class="badge rounded-pill text-bg-dark">Social Awareness</span>
+                                            <span class="badge rounded-pill text-bg-dark">Carbon Point</span>
+                                            <span class="badge rounded-pill text-bg-dark">Plantation</span>
+                                            <span class="badge rounded-pill text-bg-dark">Climate Change</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col ">
+                                    <div class="card mb-4 rounded-4 shadow-sm border border-dark ">
+                                        <div class="card-header py-3  p-3">
+                                            <h4 class="my-0 fw-normal ">Our Solution</h4>
+                                        </div>
+                                        
+                                        <div class="card-body">
+                                            <p>
+                                                Rewarding cardholder transaction with Carbon Points which could be spent on: </p> 
+                                            <p>
+                                                <mark>Pledge to Donate (Plantations)</mark> &amp;
+                                                <mark>Green Marketplace</mark>
+                                            </p>
+                                            <img class="card-img-top" src="{!$Resource.CarbonCreditsSolution}" style="height:18rem;"/>
+                                            
+                                            <ul class="list-unstyled mt-3 mb-4 alert alert-primary" role="alert">
+                                                
+                                                <li>Saving the Environment</li>
+                                                <li class="border border-dark">
+                                                    Earn Carbon Points per plantation using Points Pledged – Offset Current Usage
+                                                    
+                                                </li>
+                                                
+                                                <li>Tax Benefits</li>
+                                            </ul>
+                                            <span class="badge rounded-pill text-bg-dark">Eco Friendly</span>
+                                            <span class="badge rounded-pill text-bg-dark">Loyalty</span>
+                                            <span class="badge rounded-pill text-bg-dark">Low CO<sub>2</sub> Emission</span>
+                                            <span class="badge rounded-pill text-bg-dark">Stop Deforestation</span>
+                                            <span class="badge rounded-pill text-bg-dark">Taxation</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            
+                            <center>
+                                <p class="whte">
+                                    You can calculate your carbon points by clicking below 
+                                </p>
+                            </center>
+                            
+                            <div class="d-grid gap-2 col-6 mx-auto">
+                                <!-- Button trigger modal -->
+                                <apex:commandButton action="{!renderCalc}" styleClass="btn btn-dark" value="Calculate Your Carbon Points" 
+                                                    id="renCal" reRender="mnContent">
+
+                                </apex:commandButton>
+                                
+                            </div>
+                        </apex:outputPanel>
+                        <!-- Landing Page Content Ends -->
+                        
+                        <div class="d-grid mx-auto">
+                            
+                            
+                            
+                            <!-- Modal -->
+                            <apex:outputPanel id="clcFrm" rendered="{!calcPanel}">
+                                
+                                <div class="container text-center">
+                                    <div class="row">
+                                        <div class="col ">
+                                            <div class="card mb-4 rounded-4 shadow-sm border border-dark ">
+                                                <div class="card-header py-2  p-2">
+                                                    <h4 class="my-0 fw-normal ">Carbon Point Calculator</h4>
+                                                </div>
+                                                
+                                                <p>
+                                                    A Carbon credit represents the right to emit one metric ton of carbon dioxide </p>
+                                                
+                                                <apex:outputPanel rendered="{!errorMsgRender}">
+                                                    <div class="alert alert-danger" role="alert">
+                                                        Please fill the mandatory fields
+                                                    </div>
+                                                </apex:outputPanel>
+                                                
+                                                <div class="card-body">
+                                                    
+                                                    <div class="form-floating mb-3">
+                                                        <apex:inputField id="floatingInputSal" value="{!con.Salutation}" styleClass="form-control" html-placeholder="Salutation"/>
+                                                        <label for="floatingInputSal">Salutation</label>
+                                                    </div>
+                                                    <div class="form-floating mb-3">
+                                                        <apex:inputField id="floatingInputFN" value="{!con.FirstName}" required="true" styleClass="form-control" html-placeholder="First Name"/>
+                                                    </div>
+                                                    <div class="form-floating mb-3">
+                                                        <apex:inputField id="floatingInputLN" value="{!con.LastName}" required="true" styleClass="form-control" html-placeholder="Last Name"/>
+                                                    </div>
+                                                    <div class="form-floating mb-3">
+                                                        <apex:inputField id="floatingInputNT" value="{!con.Visa_NT_Id__c}" required="true" styleClass="form-control" html-placeholder="Visa NT Id"/>
+                                                    </div>
+                                                    <div class="form-floating mb-3">
+                                                        <apex:inputField id="floatingInputTLT" value="{!con.TLT__c}" required="true" styleClass="form-control" html-placeholder="Visa TLT"/>
+                                                        <label for="floatingInputTLT">Visa TLT</label>
+                                                    </div>
+                                                    <div class="form-floating">
+                                                        <apex:inputField id="floatingInputTrans" value="{!con.CC_Spenditure__c}" required="true" styleClass="form-control" html-placeholder="Recent Tranaction Amount"/>
+                                                        
+                                                    </div>
+                                                    <br />
+                                                    
+                                                    <apex:commandButton action="{!calculate}" styleClass="btn btn-dark" value="Calculate Your Carbon Points" id="theButton" reRender="mnContent,cPoints"/>
+                                                    &nbsp;&nbsp;&nbsp;
+                                                    
+          
+                                                    <apex:commandButton action="{!back}" immediate="true" html-formnovalidate="formnovalidate" styleClass="btn btn-dark bi bi-calculator" value="Back" id="theBackButton" >
+                                                        
+                                                    </apex:commandButton>
+                                                    
+                                                    
+                                                    <br />
+                                                    <apex:outputPanel id="cPoints" rendered="{!result}">
+                                                        <div class="list-unstyled mt-3 mb-4 alert alert-primary" role="alert">
+                                                            Your Carbon Points Earnings: {!con.Carbon_Credits__c}
+                                                        </div>
+                                                    </apex:outputPanel>
+                                                    
+                                                    <br />
+                                                    <span class="badge rounded-pill text-bg-success ">Calculator</span>
+                                                    <span class="badge rounded-pill text-bg-success ">Carbon Points</span>
+                                                    <span class="badge rounded-pill text-bg-info ">Carbon Footprint</span>
+                                                    <span class="badge rounded-pill text-bg-success ">Climate Change</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </apex:outputPanel>
+                        </div>
+                        <br />
+                    </apex:form>
+                </main>
+                
+                <!-- footer class="pt-4 my-md-5 pt-md-5 border-top">
+                    <div class="row">
+                        <div class="col-12 col-md">
+                            <small class="d-block mb-3 text-light">&copy; 2017–2022</small>
+                        </div>
+                        <div class="col-6 col-md">
+                            <h5>Board</h5>
+                            <ul class="list-unstyled text-small">
+                                <li class="mb-1"><a class="link-light text-decoration-none whte" href="#">Leadership Board</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md">
+                            <h5>Resources</h5>
+                            <ul class="list-unstyled text-small">
+                                <li class="mb-1"><a class="link-light text-decoration-none" href="#">Carbon Points</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md">
+                            <h5 >About</h5>
+                            <ul class="list-unstyled text-small">
+                                <li class="mb-1"><a class="link-light text-decoration-none" href="#">Team</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </footer -->
+            </div>
+            
+            
+            
+        </body>
+    </html>
+    
+    
+</apex:page>

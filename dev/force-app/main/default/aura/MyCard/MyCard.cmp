@@ -1,0 +1,33 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="ProductManager">
+    
+    
+    <aura:handler name="init" value="{!this}" action="{!c.initialize}"/>
+	
+    <!-- data table attributes-->
+    
+    <aura:attribute name="recordCount" type="Integer" default="1"/>
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="totalRecords" type="Integer"/>
+    
+    <lightning:card footer="Card Footer" title="Create Quick Product">
+        <aura:set attribute="actions">
+            <lightning:button label="New Product"/>
+        </aura:set>
+         <lightning:badge label="{!v.totalRecords}" iconName="utility:success"/>
+        
+        <p><b>Record Count:</b> {!v.recordCount}</p>
+        
+        <p class="slds-p-horizontal_small">
+            List of important products 
+        </p>
+        
+        <lightning:datatable
+                             keyField="id"
+                             data="{! v.data }"
+                             columns="{! v.columns }"
+                             hideCheckboxColumn="true"/>
+        
+       
+    </lightning:card>
+</aura:component>
